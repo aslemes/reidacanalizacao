@@ -1,5 +1,6 @@
 import { MessageCircle, UserCheck, FileText, Wrench } from 'lucide-react';
 import { WHATSAPP_URL } from '../constants';
+import { trackConversion } from '../lib/gtag';
 
 const steps = [
   { icon: MessageCircle, title: 'Orçamento por WhatsApp', desc: 'Complete o formulário com os seus dados e tipo de serviço necessário' },
@@ -44,6 +45,7 @@ export default function HowItWorks() {
         <div className="text-center">
           <a
             href={WHATSAPP_URL}
+            onClick={trackConversion}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-3 bg-gradient-to-r from-sky-500 to-blue-600 hover:from-sky-600 hover:to-blue-700 text-white font-bold px-8 py-4 rounded-full shadow-xl hover:shadow-2xl transition-all hover:scale-105"

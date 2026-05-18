@@ -1,5 +1,6 @@
 import { Phone, MapPin, Mail } from 'lucide-react';
 import { COMPANY, TEL_URL, EMAIL_URL } from '../constants';
+import { trackConversion } from '../lib/gtag';
 
 export default function Footer() {
   return (
@@ -20,7 +21,7 @@ export default function Footer() {
             </p>
 
             <div className="space-y-3">
-              <a href={TEL_URL} className="flex items-center gap-3 text-sky-100 hover:text-white transition-colors group">
+              <a href={TEL_URL} onClick={trackConversion} className="flex items-center gap-3 text-sky-100 hover:text-white transition-colors group">
                 <div className="w-9 h-9 rounded-lg bg-sky-800 flex items-center justify-center group-hover:bg-sky-700 transition-colors">
                   <Phone size={16} />
                 </div>
@@ -35,7 +36,7 @@ export default function Footer() {
                   <div className="text-sky-300">{COMPANY.city}</div>
                 </div>
               </div>
-              <a href={EMAIL_URL} className="flex items-center gap-3 text-sky-100 hover:text-white transition-colors group break-all">
+              <a href={EMAIL_URL} onClick={trackConversion} className="flex items-center gap-3 text-sky-100 hover:text-white transition-colors group break-all">
                 <div className="w-9 h-9 rounded-lg bg-sky-800 flex items-center justify-center group-hover:bg-sky-700 transition-colors flex-shrink-0">
                   <Mail size={16} />
                 </div>

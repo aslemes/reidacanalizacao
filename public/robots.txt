@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+# Disallow crawling of build assets (not useful for search)
+Disallow: /assets/
+
+Sitemap: https://reidacanalizacao.pt/sitemap.xml

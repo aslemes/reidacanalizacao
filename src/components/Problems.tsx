@@ -1,5 +1,6 @@
 import { Phone, MessageCircle, Mail } from 'lucide-react';
 import { COMPANY, TEL_URL, WHATSAPP_URL, EMAIL_URL } from '../constants';
+import { trackConversion } from '../lib/gtag';
 
 const keywords = [
   'desentupimento urgente',
@@ -65,6 +66,7 @@ export default function Problems() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
               href={WHATSAPP_URL}
+              onClick={trackConversion}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center gap-3 bg-white hover:bg-sky-50 text-sky-700 font-bold px-8 py-4 rounded-full shadow-xl hover:shadow-2xl transition-all hover:scale-105"
@@ -74,6 +76,7 @@ export default function Problems() {
             </a>
             <a
               href={TEL_URL}
+              onClick={trackConversion}
               className="inline-flex items-center justify-center gap-3 bg-sky-900 hover:bg-sky-950 text-white font-bold px-8 py-4 rounded-full shadow-xl hover:shadow-2xl transition-all hover:scale-105"
             >
               <Phone size={20} />
@@ -83,6 +86,7 @@ export default function Problems() {
 
           <a
             href={EMAIL_URL}
+            onClick={trackConversion}
             className="inline-flex items-center gap-2 mt-8 text-white/90 hover:text-white font-medium text-sm sm:text-base break-all"
           >
             <Mail size={18} />

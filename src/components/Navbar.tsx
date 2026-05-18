@@ -1,6 +1,7 @@
 import { Phone, Menu, X, Mail } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import { COMPANY, TEL_URL, EMAIL_URL } from '../constants';
+import { trackConversion } from '../lib/gtag';
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
@@ -47,6 +48,7 @@ export default function Navbar() {
           <div className="flex items-center gap-3">
             <a
               href={TEL_URL}
+              onClick={trackConversion}
               className="hidden sm:flex items-center gap-2 bg-gradient-to-r from-sky-500 to-blue-600 hover:from-sky-600 hover:to-blue-700 text-white font-semibold px-5 py-2.5 rounded-full shadow-lg hover:shadow-xl transition-all hover:scale-105"
             >
               <Phone size={18} />
@@ -77,6 +79,7 @@ export default function Navbar() {
               ))}
               <a
                 href={TEL_URL}
+                onClick={trackConversion}
                 className="sm:hidden flex items-center gap-2 bg-gradient-to-r from-sky-500 to-blue-600 text-white font-semibold px-5 py-3 rounded-full justify-center mt-2"
               >
                 <Phone size={18} />
@@ -84,7 +87,7 @@ export default function Navbar() {
               </a>
               <a
                 href={EMAIL_URL}
-                onClick={() => setOpen(false)}
+                onClick={() => { trackConversion(); setOpen(false); }}
                 className="flex items-center gap-2 text-sky-700 font-medium py-2 break-all"
               >
                 <Mail size={16} />

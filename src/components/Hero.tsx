@@ -1,5 +1,6 @@
 import { Phone, MessageCircle, ShieldCheck, Clock, Award, Mail } from 'lucide-react';
 import { COMPANY, TEL_URL, WHATSAPP_URL, EMAIL_URL } from '../constants';
+import { trackConversion } from '../lib/gtag';
 
 export default function Hero() {
   return (
@@ -35,6 +36,7 @@ export default function Hero() {
             <div className="flex flex-col sm:flex-row gap-4 mb-10">
               <a
                 href={TEL_URL}
+                onClick={trackConversion}
                 className="group flex items-center justify-center gap-3 bg-gradient-to-r from-sky-500 to-blue-600 hover:from-sky-600 hover:to-blue-700 text-white font-bold px-8 py-4 rounded-full shadow-xl shadow-sky-500/30 hover:shadow-2xl hover:shadow-sky-500/40 transition-all hover:scale-105"
               >
                 <Phone size={20} className="group-hover:rotate-12 transition-transform" />
@@ -42,6 +44,7 @@ export default function Hero() {
               </a>
               <a
                 href={WHATSAPP_URL}
+                onClick={trackConversion}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center justify-center gap-3 bg-white hover:bg-sky-50 text-sky-700 border-2 border-sky-500 font-bold px-8 py-4 rounded-full shadow-lg hover:shadow-xl transition-all"
@@ -53,6 +56,7 @@ export default function Hero() {
 
             <a
               href={EMAIL_URL}
+              onClick={trackConversion}
               className="inline-flex items-center gap-2 text-sky-700 hover:text-sky-900 font-medium text-sm mb-8 break-all"
             >
               <Mail size={16} />

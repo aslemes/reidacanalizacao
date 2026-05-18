@@ -1,5 +1,6 @@
 import { Droplets, Wrench, Hammer, ShieldCheck, Bath, Waves, ArrowRight, MessageCircle } from 'lucide-react';
 import { WHATSAPP_URL } from '../constants';
+import { trackConversion } from '../lib/gtag';
 
 const services = [
   {
@@ -82,6 +83,7 @@ export default function Services() {
                 <div className="flex flex-col sm:flex-row gap-3">
                   <a
                     href={WHATSAPP_URL}
+                    onClick={trackConversion}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-sky-500 to-blue-600 hover:from-sky-600 hover:to-blue-700 text-white font-semibold px-5 py-2.5 rounded-full text-sm transition-all shadow-md hover:shadow-lg"

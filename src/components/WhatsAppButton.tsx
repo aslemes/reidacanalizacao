@@ -1,10 +1,12 @@
 import { MessageCircle } from 'lucide-react';
 import { WHATSAPP_URL } from '../constants';
+import { trackConversion } from '../lib/gtag';
 
 export default function WhatsAppButton() {
   return (
     <a
       href={WHATSAPP_URL}
+      onClick={trackConversion}
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Contactar via WhatsApp"
